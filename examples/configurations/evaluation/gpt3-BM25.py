@@ -17,7 +17,7 @@ class Embedder(HuggingFaceEmbedding):
         super().__init__(model_name, device)
 
 # Create BM25 retriever instance
-bm25_retriever = BM25HtmlRetriever(embedder=Embedder(), top_k=3)
+retriever = BM25HtmlRetriever(embedder=Embedder(), top_k=3)
 
 class LLM(AzureOpenAI):
     def __init__(self):
